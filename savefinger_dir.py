@@ -1,7 +1,7 @@
 ###
 #  Save finger print to a folder
 #. The default folder is database
-#
+# python3 savefinger_dir.py [optional_dir]
 ##
 
 import hashlib
