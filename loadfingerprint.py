@@ -21,14 +21,10 @@ print(cnt)
 fileName = "database/finger_0.bin"
 
 with open(fileName, mode='rb') as file: # b is important -> binary
-    #ac =file.read()
+    # load the template from file in a binary list
     ac = np.fromfile(file,dtype).tolist()
-    #ac = struct.unpack("i" * ((len(fileContent) -24) // 4), fileContent[20:-4])
-    #fileContent=struct.unpack("i" * ((len(fileContent) -24) // 4), fileContent[20:-4])
-    #fileContent = list(fileContent)
-    print(type(ac[0]))
+    # convert template into a string
     characterics = str(ac).encode('utf-8')
-    #print(str(fileContent).encode('utf-8'))
     # create a new template and add charater into the template
     #f.createTemplate()
     #f.uploadCharacteristics(0x01,ac)
