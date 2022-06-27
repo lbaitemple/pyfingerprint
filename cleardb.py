@@ -1,7 +1,7 @@
 from pyfingerprint.pyfingerprint import PyFingerprint
 
 
-## Search for a finger
+## remove everything in the database
 ##
 
 ## Tries to initialize the sensor
