@@ -1,5 +1,5 @@
 import hashlib
-import struct
+import struct, sys, os
 import numpy as np
 from pyfingerprint.pyfingerprint import PyFingerprint
 
@@ -16,15 +16,17 @@ except Exception as e:
     exit(1)
 
 cnt=f.getTemplateCount()
-print(cnt)
 
-path = "database/"
+if len(sys.argv) > 1:
+    path = sys.argv[1]
+else:
+    path = 'database/'
 
-import os
+
 file_list = os.listdir(path)
 
 for fileName in file_list:
-    with open(path+fileName, mode='rb') as file: # b is important -> binary
+    with open(path+"/" + fileName, mode='rb') as file: # b is important -> binary
         # load the template from file in a binary list
         ac = np.fromfile(file,dtype).tolist()
         # convert template into a string
