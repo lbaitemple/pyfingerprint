@@ -1,3 +1,8 @@
+###
+#. load database from a folder to finger printing sensor
+#  python3 loadfingerprint.py [optinal_dir]
+###
+
 import hashlib
 import struct, sys, os
 import numpy as np
