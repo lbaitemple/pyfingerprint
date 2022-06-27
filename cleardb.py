@@ -23,3 +23,4 @@ print('Currently used templates: ' + str(f.getTemplateCount()) +'/'+ str(f.getSt
 if (f.getTemplateCount()>0):
     f.clearDatabase()
     
+print('Currently used templates: ' + str(f.getTemplateCount()) +'/'+ str(f.getStorageCapacity()))
