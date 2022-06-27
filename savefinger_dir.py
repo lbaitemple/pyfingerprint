@@ -5,7 +5,7 @@
 ##
 
 import hashlib
-import time
+import time, os
 from pyfingerprint.pyfingerprint import PyFingerprint
 from pyfingerprint.pyfingerprint import FINGERPRINT_CHARBUFFER1 
 
@@ -42,6 +42,9 @@ try:
         path = sys.argv[1]
     else:
         path = 'database/'
+    if not os.path.exists(path):
+        os.makedirs(path)
+        
     ## Loads the found template to charbuffer 1
     characterics=''
     
