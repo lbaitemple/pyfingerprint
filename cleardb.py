@@ -3,6 +3,7 @@ from pyfingerprint.pyfingerprint import PyFingerprint
 
 ## remove everything in the database
 ##
+# python3 cleardb.py 
 
 ## Tries to initialize the sensor
 try:
