@@ -5,7 +5,7 @@
 ##
 
 import hashlib
-import time, os
+import time, os, sys
 from pyfingerprint.pyfingerprint import PyFingerprint
 from pyfingerprint.pyfingerprint import FINGERPRINT_CHARBUFFER1 
 
