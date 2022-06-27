@@ -18,16 +18,20 @@ except Exception as e:
 cnt=f.getTemplateCount()
 print(cnt)
 
-fileName = "database/finger_0.bin"
+path = "database/"
 
-with open(fileName, mode='rb') as file: # b is important -> binary
-    # load the template from file in a binary list
-    ac = np.fromfile(file,dtype).tolist()
-    # convert template into a string
-    characterics = str(ac).encode('utf-8')
-    # create a new template and add charater into the template
-    #f.createTemplate()
-    #f.uploadCharacteristics(0x01,ac)
-    #positionNumber = f.storeTemplate()
-    #print(positionNumber)
-    print('SHA-2 hash of template: ' + hashlib.sha256(characterics).hexdigest())
+import os
+file_list = os.listdir(path)
+
+for fileName in file_list:
+    with open(path+fileName, mode='rb') as file: # b is important -> binary
+        # load the template from file in a binary list
+        ac = np.fromfile(file,dtype).tolist()
+        # convert template into a string
+        characterics = str(ac).encode('utf-8')
+        # create a new template and add charater into the template
+        f.createTemplate()
+        f.uploadCharacteristics(0x01,ac)
+        positionNumber = f.storeTemplate()
+        print(positionNumber)
+        print('SHA-2 hash of template: ' + hashlib.sha256(characterics).hexdigest())
