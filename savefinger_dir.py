@@ -1,3 +1,9 @@
+###
+#  Save finger print to a folder
+#. The default folder is database
+#
+##
+
 import hashlib
 import time
 from pyfingerprint.pyfingerprint import PyFingerprint
@@ -32,7 +38,10 @@ try:
 
     ## OPTIONAL stuff
     ##
-
+    if len(sys.argv) > 1:
+        path = sys.argv[1]
+    else:
+        path = 'database/'
     ## Loads the found template to charbuffer 1
     characterics=''
     
@@ -44,7 +53,7 @@ try:
         print(type(ac[1]))
         print(len(ac))
         characterics = str(ac).encode('utf-8')
-        filename = "./database/finger_{}.bin".format(i)
+        filename = path+"/finger_{}.bin".format(i)
         wf=open(filename,"wb")
         wf.write(bytearray(ac))
         wf.close()
